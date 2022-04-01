@@ -6,7 +6,7 @@ h1 タスク一覧
 table.table.table-hover 
   thread.thread-default 
     tr 
-      th = Task.human_attribute_name(:name)
+      th = Task.human_attribute_name(:name) #ここのhumanって何?
       th = Task.human_attribute_name(:created_at)
     tbody 
       - @tasks.each do |task|
@@ -14,4 +14,3 @@ table.table.table-hover
           td = task.name 
           td = task.created_at
 
-          
