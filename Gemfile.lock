@@ -49,6 +49,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -138,6 +139,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     railties (5.2.7)
       actionpack (= 5.2.7)
       activesupport (= 5.2.7)
@@ -217,6 +220,7 @@ PLATFORMS
   -darwin-20
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap
   byebug
@@ -229,6 +233,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.6)
+  rails_autolink
   sass-rails (~> 5.0)
   selenium-webdriver
   slim-rails
