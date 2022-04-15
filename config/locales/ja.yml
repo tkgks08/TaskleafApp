@@ -22,7 +22,7 @@ ja:
         
       user:
         id: ID
-        name: 名前
+        name: 名称
         email: メールアドレス
         admin: 管理者権限
         password: パスワード
