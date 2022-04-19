@@ -73,3 +73,6 @@ group :test do
   gem 'webdrivers'
 end
 gem 'kaminari'
+gem 'sidekiq', '~> 5.0'
+gem 'jquery-rails'
+gem 'webpacker'

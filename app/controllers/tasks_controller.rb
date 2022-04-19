@@ -11,6 +11,7 @@ class TasksController < ApplicationController
     
     if @task.save
       TaskMailer.creation_email(@task).deliver_now
+      SampleJob.perform_later
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
       render :new
@@ -24,7 +25,7 @@ class TasksController < ApplicationController
   
   def index
     @q = current_user.tasks.ransack(params[:q])
-    @tasks = @q.result(distinct: true).page(params[:page])
+    @tasks = @q.result(distinct: true).page(params[:page]).per(50)
 
     respond_to do |format|
       format.html
@@ -49,7 +50,6 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。"
   end
 
   def confirm_new
